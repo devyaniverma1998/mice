@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zenith MICE - Corporate Travel Solutions</title>
+      <link rel="icon" href="asset/img/favicon.png" sizes="32x32">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stats-section {
+            padding: 3rem 1rem 1rem 1rem;
+            background: linear-gradient(to bottom right, white, #ffffff);
+            text-align: center;
+        }
+
+        .stats-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-section p {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .stats-section p strong {
+            color: #06b6d4;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .stat-box {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .stat-box:hover {
+            background-color: #e0e7ff;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(to bottom right, #06b6d4, #2563eb);
+        }
+
+        .icon-circle i {
+            width: 30px;
+            height: 30px;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .stats-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-box {
+                padding: 1rem;
+            }
+        }
+
+        .logo-img {
+            margin-top: -75px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            opacity: 1;
+            padding: 1rem;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .mice-card {
+            position: relative;
+            min-height: 400px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .mice-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mice-letter {
+            font-size: 6rem;
+            color: #e0e0e0;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .mice-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .mice-item {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .mice-item:hover {
+            transform: translateX(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 70px;
+            height: auto;
+        }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg w-full z-10">
+        <div class="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center logo">
+                    <a href="/"> <img src="asset/img/zenith_logo.svg" alt="Zenith MICE Logo"
+                            aria-label="Zenith MICE Logo"></a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="text-gray-700 hover:text-cyan-600 transition">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="w-100">
+        <picture>
+            <!-- Mobile Image -->
+            <source media="(max-width: 767px)" srcset="asset/img/m-1.png">
+            <!-- Desktop Image -->
+            <img src="asset/img/desktop-1.png" class="img-fluid w-100" alt="Hero Banner">
+        </picture>
+    </section>
+ <!-- Stats Section -->
+    <section class="stats-section py-10 bg-gradient-to-br from-white via-cyan-50 to-cyan-100">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Numbers Say It All!</h2>
+            <p class="text-gray-600 mt-2">
+                <strong>India’s No.1</strong> in business travel is here to manage every trip for your organization.
+            </p>
+        </div>
+        <div
+            class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto  sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                  bg-gradient-to-br from-cyan-600 to-blue-600 text-white mb-3">
+                    <i class="bi bi-trophy w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Top Brand</h3>
+                <!--<p class="text-gray-600 text-sm">Most Prefered Brand</p>-->
+            </div>
+            <div class="bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                  bg-gradient-to-br from-cyan-600 to-blue-600 text-white mb-3">
+                    <i class="bi bi-ticket w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">500+ Companies</h3>
+                <!--<p class="text-gray-600 text-sm">Companies</p>-->
+            </div>
+            <div class="bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                  bg-gradient-to-br from-cyan-600 to-blue-600 text-white mb-3">
+                    <i class="bi bi-building w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">10,000+ Clients</h3>
+                <!--<p class="text-gray-600 text-sm"> Clients</p>-->
+            </div>
+            <div class="bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                  bg-gradient-to-br from-cyan-600 to-blue-600 text-white mb-3">
+                    <i class="bi bi-people w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">2M+ Customers</h3>
+                <!--<p class="text-gray-600 text-sm"> Customers</p>-->
+            </div>
+            <div class="bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                  bg-gradient-to-br from-cyan-600 to-blue-600 text-white mb-3">
+                    <i class="bi bi-briefcase w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">100+ Destinations</h3>
+                <!--<p class="text-gray-600 text-sm">Destinations</p>-->
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Services Section -->
+<section id="services" class="relative py-16 sm:py-20 bg-gradient-to-br from-white via-cyan-50 to-cyan-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">
+            Our <span class="text-cyan-600">Services</span>
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 text-center">
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-green-900 to-green-500 text-white mb-3 sm:mb-4" aria-label="End-to-End Planning Icon">
+                    <i class="bi bi-list-check"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">End-to-End Planning</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-900 to-purple-500 text-white mb-3 sm:mb-4" aria-label="Seamless Travel Icon">
+                    <i class="bi bi-airplane"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Seamless Travel</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-teal-900 to-teal-500 text-white mb-3 sm:mb-4" aria-label="Handpicked Hotels Icon">
+                    <i class="bi bi-building"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Handpicked Hotels</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-red-900 to-red-500 text-white mb-3 sm:mb-4" aria-label="Venue Management Icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Venue Management</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-yellow-900 to-yellow-500 text-white mb-3 sm:mb-4" aria-label="Event Execution Icon">
+                    <i class="bi bi-mic"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Event Execution</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-900 to-blue-500 text-white mb-3 sm:mb-4" aria-label="Custom Itineraries Icon">
+                    <i class="bi bi-map"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Custom Itineraries</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-900 to-indigo-500 text-white mb-3 sm:mb-4" aria-label="Cost Efficiency Icon">
+                    <i class="bi bi-wallet"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Cost Efficiency</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-pink-900 to-pink-500 text-white mb-3 sm:mb-4" aria-label="Technology Support Icon">
+                    <i class="bi bi-laptop"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Technology Support</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-gray-900 to-gray-500 text-white mb-3 sm:mb-4" aria-label="Brand Integration Icon">
+                    <i class="bi bi-brush"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Brand Integration</h4>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+                <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-orange-900 to-orange-500 text-white mb-3 sm:mb-4" aria-label="Dedicated Support Icon">
+                    <i class="bi bi-headset"></i>
+                </div>
+                <h4 class="text-base sm:text-lg font-bold text-gray-800">Dedicated Support</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="relative py-20 bg-gradient-to-br from-cyan-50 via-white to-cyan-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                Zenith’s Expertise in <span class="text-cyan-600">MICE</span>
+            </h3>
+            <p class="text-gray-600 max-w-3xl mx-auto mb-12">
+                Zenith stands as one of the most trusted names in MICE travel across India.
+                With our destination expertise, advanced technology, and seamless execution,
+                we don’t just organize business travel & events — we craft <span
+                    class="font-semibold text-cyan-600">impactful experiences</span>.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-3">
+                <div
+                    class="group relative bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg p-6 hover:shadow-2xl hover:scale-105 transition transform duration-300">
+                    <div class="logo-img">
+                        <img src="asset/img/Meetings.png" width="100" alt="Meetings Icon" aria-label="Meetings">
+                    </div>
+                    <ul class="space-y-2 text-gray-600 text-sm text-left mt-4">
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-blue-600 mr-2"></i>
+                            Leadership Huddles</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-blue-600 mr-2"></i>
+                            Strategic Roundtables</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-blue-600 mr-2"></i>
+                            Knowledge Sharing Sessions</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-blue-600 mr-2"></i>
+                            Business Briefings</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-blue-600 mr-2"></i>
+                            Executive Gatherings</li>
+                    </ul>
+                </div>
+                <div
+                    class="group relative bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg p-6 hover:shadow-2xl hover:scale-105 transition transform duration-300">
+                    <div class="logo-img">
+                        <img src="asset/img/Incentives.png" width="100" alt="Incentives Icon" aria-label="Incentives">
+                    </div>
+                    <ul class="space-y-2 text-gray-600 text-sm text-left mt-4">
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-pink-600 mr-2"></i>
+                            Exclusive Team Getaways</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-pink-600 mr-2"></i>
+                            Adventure Escapes</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-pink-600 mr-2"></i>
+                            Leadership Retreats</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-pink-600 mr-2"></i>
+                            Partner Appreciation Trips</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle-fill w-5 h-5 text-pink-600 mr-2"></i>
+                            Global Trade Journeys</li>
+                    </ul>
+                </div>
+                <div
+                    class="group relative bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg p-6 hover:shadow-2xl hover:scale-105 transition transform duration-300">
+                    <div class="logo-img">
+                        <img src="asset/img/Conferences.png" width="100" alt="Conferences Icon"
+                            aria-label="Conferences">
+                    </div>
+                    <ul class="space-y-2 text-gray-600 text-sm text-left mt-4">
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-green-600 mr-2"></i>
+                            Healthcare Summits</li>
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-green-600 mr-2"></i>
+                            Industry Forums</li>
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-green-600 mr-2"></i>
+                            Professional Networking Meets</li>
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-green-600 mr-2"></i>
+                            Knowledge Forums</li>
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-green-600 mr-2"></i>
+                            Association Gatherings</li>
+                    </ul>
+                </div>
+                <div
+                    class="group relative bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg p-6 hover:shadow-2xl hover:scale-105 transition transform duration-300">
+                    <div class="logo-img">
+                        <img src="asset/img/Events.png" width="100" alt="Exhibitions Icon" aria-label="Exhibitions">
+                    </div>
+                    <ul class="space-y-2 text-gray-600 text-sm text-left mt-4">
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-orange-600 mr-2"></i>
+                            Employee Milestone Celebrations</li>
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-orange-600 mr-2"></i>
+                            Starry Gala Evenings</li>
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-orange-600 mr-2"></i>
+                            Brand Launch Experiences</li>
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-orange-600 mr-2"></i>
+                            Exhibition Booths</li>
+                        <li class="flex items-center"><i
+                                class="bi bi-check-circle-fill w-5 h-5 text-orange-600 mr-2"></i>
+                            Digital Summits & Webinars</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="py-20 bg-gradient-to-br from-white via-cyan-50 to-cyan-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Why Choose Zenith MICE?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-cyan-600 mb-2">One-Stop Solution</h3>
+                    <p class="text-gray-600">No need to run around for flights, hotels, transport, or event spaces.
+                        At Zenith, we handle everything from travel and stay to meetings and entertainment – all under
+                        one roof.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-cyan-600 mb-2">Tailor-Made Plans</h3>
+                    <p class="text-gray-600">Every business is unique, so why settle for standard plans? We design
+                        customised itineraries, event setups, and travel arrangements that perfectly match your
+                        company’s goals and culture.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-cyan-600 mb-2">Pan-India & Global Reach</h3>
+                    <p class="text-gray-600">Whether it’s an off-site in the Himalayas, a conference in Goa, or an
+                        international event in Dubai – our network covers destinations across India and worldwide.
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-cyan-600 mb-2">Hassle-Free Execution</h3>
+                    <p class="text-gray-600">Leave the stress to us. From start to finish, our team ensures smooth
+                        planning, seamless logistics, and on-ground support, so you can focus on networking and
+                        building relationships.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-cyan-600 mb-2">Experienced Team</h3>
+                    <p class="text-gray-600">Our experts bring years of knowledge about destinations, venues, and
+                        corporate event management. We know what works best and ensure every event runs with
+                        professional precision.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-cyan-600 mb-2">Value for Money</h3>
+                    <p class="text-gray-600">We believe in giving you the best experience without overspending. With
+                        our expertise and partnerships, you get top-quality arrangements at the most cost-effective
+                        pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <!--<section id="about" class="relative py-20 bg-gradient-to-br from-white via-cyan-50 to-cyan-100">-->
+    <!--    <div class="max-w-6xl mx-auto px-6 lg:px-12 text-center">-->
+    <!--        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">-->
+    <!--            About <span class="text-cyan-600">Zenith MICE</span>-->
+    <!--        </h2>-->
+    <!--        <p class="text-lg text-gray-600 leading-relaxed mb-10">-->
+    <!--            Zenith brings a fresh dimension to business tourism. Whether you want to reward employees,-->
+    <!--            engage clients, or strengthen bonds with channel partners,-->
+    <!--            we design <span class="font-semibold text-cyan-600">meaningful experiences</span> that cover every-->
+    <!--            aspect of MICE – anywhere across the globe. Our expert team acts as your single point of contact,-->
+    <!--            managing everything from intimate off-sites to large-scale events and conferences.-->
+    <!--        </p>-->
+    <!--        <div-->
+    <!--            class="relative bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl p-8 md:p-12 text-left hover:shadow-2xl transition">-->
+    <!--            <span-->
+    <!--                class="absolute -top-5 -left-5 w-16 h-16 flex items-center justify-center text-xl font-bold text-white bg-gradient-to-br from-cyan-600 to-blue-600 rounded-2xl shadow-md">-->
+    <!--                MICE-->
+    <!--            </span>-->
+    <!--            <p class="text-gray-700 leading-relaxed mb-4">-->
+    <!--                In the hospitality world, <span class="font-semibold text-cyan-600">MICE (Meetings, Incentives,-->
+    <!--                    Conferences, and Exhibitions)</span> has become a vital part of business travel. It supports-->
+    <!--                organisations in hosting workshops, product-->
+    <!--                launches, corporate meetings, and seminars with <span class="font-medium">ease and-->
+    <!--                    precision</span>.-->
+    <!--            </p>-->
+    <!--            <p class="text-gray-700 leading-relaxed">-->
+    <!--                A well-structured MICE calendar not only ensures smooth business operations but also-->
+    <!--                <span class="font-semibold text-cyan-600">uplifts workplace culture</span>, boosts branding-->
+    <!--                opportunities, and fosters new collaborations. Beyond business, it strengthens employer–employee-->
+    <!--                relationships and-->
+    <!--                builds lasting connections with future clients.-->
+    <!--            </p>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+
+
+
+<section id="contact" class="py-20 bg-gradient-to-br from-white via-cyan-50 to-cyan-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Contact Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Frequently Asked Questions</h3>
+                <div class="space-y-4">
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">What is MICE travel?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>MICE stands for Meetings, Incentives, Conferences, and Exhibitions. In simple words, it’s all about organising official group travel, business meetings, company off-sites, reward trips, or big events for employees and clients. Instead of you handling everything separately, MICE brings it all together in one package.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">Why should a company choose MICE travel?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>Because it makes life so much easier for companies. Imagine planning flights, hotels, transport, food, and events all by yourself – it’s stressful and time-consuming. With MICE, everything is managed by experts, so your company can just focus on business and team bonding while the rest is taken care of.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">What types of services are included in MICE?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>MICE is a complete package. It usually covers flight bookings, hotel stays, cabs or buses for local travel, conference halls, event setup, sightseeing, meals, and even fun activities for the team. Basically, from start to finish, everything is handled in one smooth flow.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">Can MICE be done for small teams also?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>Yes, absolutely! Many people think MICE is only for huge corporates, but that’s not true. Even a small team of 10–20 people can plan a workshop, training session, or off-site trip. The size of the group doesn’t matter – what matters is creating the right experience.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">Do MICE packages include international destinations?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>Yes! MICE is not just limited to India. Companies often plan events in popular international spots like Dubai, Singapore, Thailand, or Europe. It adds a global touch to the experience and also makes employees excited about attending business trips.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">How does MICE benefit employees?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>Employees love MICE trips because they get a mix of work and relaxation. They meet colleagues outside the office, build stronger bonds, enjoy team activities, and feel motivated. Such trips often improve team spirit and overall job satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">Is MICE only about official work?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>Not really. While MICE covers business activities like meetings and conferences, it also mixes in leisure. For example, a company might have training sessions during the day and team parties, sightseeing tours, or adventure activities in the evening. It’s all about balancing work with fun.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">How much does MICE travel cost?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>There’s no fixed price – it depends on the destination, number of people, and the type of event. Some companies go for luxury options while others prefer budget-friendly plans. The good part is that MICE packages can be fully customised to match the company’s budget and requirements.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">Who takes care of the event planning in MICE?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>The best part of MICE is that you don’t have to worry about a thing. A professional team (like Zenith Holidays) manages the entire process – booking flights, arranging hotels, setting up the event, handling food, and even managing emergencies. It’s like having your own travel manager.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 cursor-pointer" role="button" aria-expanded="false">Why choose Zenith for MICE?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p>Because Zenith makes business travel simple, smooth, and stress-free. With years of experience, the best connections with hotels and airlines, and a dedicated team, Zenith ensures your event is not just successful but also memorable. Whether it’s a small team off-site or a big international conference, Zenith handles it all with ease.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Get in Touch</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" class="w-full p-2 border rounded-lg" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="w-full p-2 border rounded-lg" placeholder="Your Email" required>
+                        </div>
+                        <div>
+                            <label for="tel" class="block text-gray-700">Mobile Number</label>
+                            <input type="tel" id="tel" name="Number" class="w-full p-2 border rounded-lg" placeholder="Your Number" required>
+                        </div>
+                        <div>
+                            <label for="branch-location" class="block text-gray-700">Branch Location</label>
+                            <select id="branch-location" name="branch-location" class="w-full p-2 border rounded-lg" required>
+                                <option value="" disabled selected>Select Branch Location</option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Bhopal">Bhopal</option>
+                                <option value="Bhubaneswar">Bhubaneswar</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Coimbatore">Coimbatore</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gurgaon">Gurgaon</option>
+                                <option value="Guwahati">Guwahati</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Jammu">Jammu</option>
+                                <option value="Jamshedpur">Jamshedpur</option>
+                                <option value="Kanpur">Kanpur</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Lucknow">Lucknow</option>
+                                <option value="Ludhiana">Ludhiana</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="New Delhi">New Delhi</option>
+                                <option value="Noida">Noida</option>
+                                <option value="Patna">Patna</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Rajkot">Rajkot</option>
+                                <option value="Ranchi">Ranchi</option>
+                                <option value="Surat">Surat</option>
+                                <option value="Vadodara">Vadodara</option>
+                                <option value="Vizag">Vizag</option>
+                                <option value="Europe">Europe</option>
+                                <option value="UAE">UAE</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Philippines">Philippines</option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="destinationFilter" class="block text-gray-700">Destination</label>
+                            <select id="destinationFilter" name="destinationFilter" single="single" class="w-full p-2 border rounded-lg"></select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700">Message</label>
+                            <textarea id="message" name="message" class="w-full p-2 border rounded-lg" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="button" id="submit-btn" class="bg-cyan-600 text-white px-6 py-3 rounded-full hover:bg-cyan-700 transition w-full">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<script>
+const destinations = [
+    // Asia
+    "India - Goa", "India - Kerala", "India - Manali", "India - Kashmir", "India - Jaipur", "India - Andaman", 
+    "India - Delhi", "India - Mumbai", "India - Agra (Taj Mahal)", "India - Udaipur", 
+    "Thailand - Bangkok", "Thailand - Phuket", "Thailand - Chiang Mai", 
+    "Singapore - Marina Bay", "Singapore - Sentosa Island",
+    "Indonesia - Bali", "Indonesia - Jakarta", "Indonesia - Yogyakarta", 
+    "Malaysia - Kuala Lumpur", "Malaysia - Penang", 
+    "Vietnam - Ho Chi Minh City", "Vietnam - Hanoi", "Vietnam - Ha Long Bay", 
+    "Philippines - Manila", "Philippines - Boracay", 
+    "Sri Lanka - Colombo", "Sri Lanka - Kandy", 
+    "Japan - Tokyo", "Japan - Kyoto", "Japan - Osaka", 
+    "China - Beijing", "China - Shanghai", "China - Great Wall", 
+    "South Korea - Seoul", "South Korea - Jeju Island", 
+    "UAE - Dubai", "UAE - Abu Dhabi", 
+    "Maldives - Malé", 
+    "Nepal - Kathmandu", "Nepal - Pokhara", 
+    "Bhutan - Paro", "Bhutan - Thimphu",
+    // Europe
+    "France - Paris", "France - Nice", 
+    "United Kingdom - London", "United Kingdom - Edinburgh", 
+    "Italy - Rome", "Italy - Venice", "Italy - Florence", 
+    "Spain - Barcelona", "Spain - Madrid", 
+    "Germany - Berlin", "Germany - Munich", 
+    "Netherlands - Amsterdam", 
+    "Switzerland - Zurich", "Switzerland - Lucerne", 
+    "Austria - Vienna", "Austria - Salzburg", 
+    "Greece - Athens", "Greece - Santorini", 
+    "Turkey - Istanbul", "Turkey - Cappadocia", 
+    "Portugal - Lisbon", "Portugal - Porto", 
+    "Russia - Moscow", "Russia - Saint Petersburg",
+    // North America
+    "United States - New York City", "United States - Las Vegas", "United States - San Francisco", 
+    "Canada - Toronto", "Canada - Vancouver", 
+    "Mexico - Mexico City", "Mexico - Cancun",
+    // South America
+    "Brazil - Rio de Janeiro", "Brazil - São Paulo", 
+    "Argentina - Buenos Aires", 
+    "Peru - Lima", "Peru - Machu Picchu",
+    // Africa
+    "South Africa - Cape Town", "South Africa - Johannesburg", 
+    "Egypt - Cairo", "Egypt - Giza (Pyramids)", 
+    "Morocco - Marrakech", "Morocco - Fez", 
+    "Kenya - Nairobi", "Kenya - Maasai Mara",
+    // Australia & Oceania
+    "Australia - Sydney", "Australia - Melbourne", "Australia - Great Barrier Reef", 
+    "New Zealand - Auckland", "New Zealand - Queenstown"
+];
+
+// Initialize single-select for branch locations
+const branchSelect = document.getElementById("branch-location");
+const branchChoices = new Choices(branchSelect, {
+    removeItemButton: true,
+    searchEnabled: true,
+    placeholder: true,
+    placeholderValue: "Select Branch Location"
+});
+
+// Initialize single-select for destinations
+const destSelect = document.getElementById("destinationFilter");
+destinations.forEach(d => {
+    const opt = document.createElement("option");
+    opt.value = 1;
+    opt.textContent = d;
+    destSelect.appendChild(opt);
+});
+
+const destChoices = new Choices(destSelect, {
+    removeItemButton: true,
+    searchEnabled: true,
+    placeholder: true,
+    placeholderValue: "Select Destination"
+});
+
+// Handle form submission
+document.getElementById("submit-btn").addEventListener("click", () => {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const tel = document.getElementById("tel").value;
+    const branch = branchChoices.getValue(true);
+    const destination = destChoices.getValue(true);
+    const message = document.getElementById("message").value;
+
+    // Basic validation
+    if (!name || !email || !tel || !branch || !destination || !message) {
+        alert("Please fill out all required fields.");
+        return;
+    }
+
+    // Log form data (replace with actual form submission logic, e.g., API call)
+    console.log({
+        name,
+        email,
+        tel,
+        branch,
+        destination,
+        message
+    });
+
+    // Optional: Show success message
+    alert("Form submitted successfully!");
+});
+
+// Handle FAQ toggle
+document.querySelectorAll(".faq-item h4").forEach(item => {
+    item.addEventListener("click", () => {
+        const answer = item.nextElementSibling;
+        const isExpanded = item.getAttribute("aria-expanded") === "true";
+        item.setAttribute("aria-expanded", !isExpanded);
+        answer.style.display = isExpanded ? "none" : "block";
+    });
+});
+</script>
+
+    <footer class="bg-gray-900 text-white pt-12">
+        <div class="container-fluid px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <img src="asset/img/zenith_logo.svg" alt="Zenith Holidays Logo"
+                        class="h-12 mb-4 filter brightness-0 invert">
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Your trusted partner for seamless business travel experiences. We provide comprehensive
+                        travel solutions with 24/7 support.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <div class="space-y-3">
+                        <a href="tel:+91 1800 11 2277"
+                            class="flex items-center text-gray-300 hover:text-white transition-colors"
+                            aria-label="Call us at  +91 1800 11 2277">
+                            <span class="mr-2">📞</span>
+                            +91 1800 11 2277
+                        </a>
+                        <a href="mailto:web@zenithholidays.com"
+                            class="flex items-center text-gray-300 hover:text-white transition-colors"
+                            aria-label="Email us at web@zenithholidays.com">
+                            <span class="mr-2">📧</span>
+                            web@zenithholidays.com
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Visit Our Office</h3>
+                    <div class="text-gray-300">
+                        <p class="flex items-start">
+                            <span class="mr-2 mt-1">📍</span>
+                            <span>
+                                B-2, Ground Floor, Sector 59,<br>
+                                Noida, Uttar Pradesh, 201301
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 py-3">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; 2025 Zenith Holidays. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="https://www.zenithholidays.com/privacy-policy"
+                            class="text-gray-400 hover:text-white transition-colors" aria-label="Privacy Policy">Privacy
+                            Policy</a>
+                        <a href="https://www.zenithholidays.com/terms-of-use"
+                            class="text-gray-400 hover:text-white transition-colors" aria-label="Terms of Service">Terms
+                            of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Swiper
+            const swiper = new Swiper('.mySwiper', {
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('h4');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('h4').setAttribute('aria-expanded', 'false');
+                    });
+                    if (!isActive) {
+                        item.classList.add('active');
+                        question.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
